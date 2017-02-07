@@ -1,30 +1,31 @@
-#include "AddFolderWizardPage.h"
-#include "ResultWizardPage.h"
-#include "MainWindow.h"
-#include "ProgressWizardPage.h"
 #include "DuplicateFinderWizard.h"
 #include <QApplication>
-#include <QWizard>
-#include <QMediaPlayer>
-#include <QVideoWidget>
+#include <QDir>
+
+// workaround for a bug on mac > Mavericks
+// Finder returns / as the working path of an app bundle
+// but if the app is run from terminal, the path is correct
+// This method calcluates the path of the bundle from the application's path
+QString getCurrentPath()
+{
+    QDir dir(QApplication::applicationDirPath());
+    dir.cdUp();
+    dir.cdUp();
+    dir.cdUp();
+    return dir.absolutePath();
+}
 
 int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
+    app.setAttribute(Qt::AA_UseHighDpiPixmaps);
+
+#ifdef Q_OS_OSX
+    QDir::setCurrent(getCurrentPath());
+#endif
 
     DuplicateFinderWizard wizard;
-    wizard.show();
-
-//    MainWindow wnd;
-//    wnd.showMaximized();
-
-//    QMediaPlayer* player = new QMediaPlayer;
-//    player->setMedia(QUrl::fromLocalFile("/Users/Cong/OneDrive/Pictures/Camera Roll/20170204_025345000_iOS.MOV"));
-
-//    QVideoWidget* videoWidget = new QVideoWidget;
-//    player->setVideoOutput(videoWidget);
-//    videoWidget->showMaximized();
-//    player->play();
+    wizard.showMaximized();
 
     return app.exec();
 }

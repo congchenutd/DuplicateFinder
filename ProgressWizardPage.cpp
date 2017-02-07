@@ -18,6 +18,7 @@ ProgressWizardPage::ProgressWizardPage(DuplicateFinderWizard* wizard) :
 
 void ProgressWizardPage::initializePage()
 {
+    _wizard->clearResult();
     preScan();
     ui.progressBar->setMinimum(0);
     ui.progressBar->setMaximum(_candidates.count());

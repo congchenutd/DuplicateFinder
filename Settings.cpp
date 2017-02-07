@@ -29,6 +29,11 @@ QString Settings::getExiftoolPath() const {
     return "/usr/local/bin/exiftool";
 }
 
+QString Settings::getTrashLocation() const {
+    QDir::current().mkdir("Trash");
+    return "./Trash";
+}
+
 Settings::Settings(const QString& fileName)
     : QSettings(fileName, QSettings::IniFormat) {}
 

@@ -1,9 +1,3 @@
-#-------------------------------------------------
-#
-# Project created by QtCreator 2017-02-02T10:50:35
-#
-#-------------------------------------------------
-
 QT       += core gui multimedia multimediawidgets
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
@@ -22,32 +16,37 @@ DEFINES += QT_DEPRECATED_WARNINGS
 # You can also select to disable deprecated APIs only up to a certain version of Qt.
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
+macx {
+    ICON = Images/Duplicate.icns
+}
 
 SOURCES +=\
-        MainWindow.cpp \
     Main.cpp \
     AddFolderWizardPage.cpp \
     ResultWizardPage.cpp \
     ProgressWizardPage.cpp \
     Settings.cpp \
-    DuplicateFinderWizard.cpp \
     ResultModel.cpp \
     SummaryWizardPage.cpp \
-    PreviewWidget.cpp
+    PreviewWidget.cpp \
+    DuplicateFinderWizard.cpp
 
-HEADERS  += MainWindow.h \
+HEADERS  += \
     AddFolderWizardPage.h \
     ResultWizardPage.h \
     ProgressWizardPage.h \
     Settings.h \
-    DuplicateFinderWizard.h \
     ResultModel.h \
     SummaryWizardPage.h \
-    PreviewWidget.h
+    PreviewWidget.h \
+    DuplicateFinderWizard.h
 
-FORMS    += MainWindow.ui \
+FORMS    += \
     AddFolderWizardPage.ui \
     ResultWizardPage.ui \
     ProgressWizardPage.ui \
     SummaryWizardPage.ui \
     PreviewWidget.ui
+
+RESOURCES += \
+    Resources.qrc

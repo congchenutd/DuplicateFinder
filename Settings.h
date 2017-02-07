@@ -13,6 +13,7 @@ public:
 
     QStringList getFileTypes() const;
     QString     getExiftoolPath() const;
+    QString     getTrashLocation() const;
 
 private:
     Settings(const QString& fileName);

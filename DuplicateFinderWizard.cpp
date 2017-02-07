@@ -9,6 +9,7 @@ DuplicateFinderWizard::DuplicateFinderWizard(QWidget* parent)
     : QWizard(parent)
 {
     setWindowTitle("Duplicate Finder");
+    setWindowIcon(QIcon(":/Images/Duplicate.png"));
     setWizardStyle(QWizard::ClassicStyle);
     addPage(new AddFolderWizardPage);
     addPage(new ProgressWizardPage(this));

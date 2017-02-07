@@ -1,6 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>SummaryWizardPage</class>
- <widget name="SummaryWizardPage" class="QWizardPage">
+ <widget class="QWizardPage" name="SummaryWizardPage">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -12,5 +13,16 @@
   <property name="windowTitle">
    <string>WizardPage</string>
   </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QProgressBar" name="progressBar">
+     <property name="value">
+      <number>24</number>
+     </property>
+    </widget>
+   </item>
+  </layout>
  </widget>
+ <resources/>
+ <connections/>
 </ui>

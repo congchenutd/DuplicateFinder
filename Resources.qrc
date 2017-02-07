@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Images/Duplicate.icns</file>
+        <file>Images/Duplicate.ico</file>
+        <file>Images/Duplicate.png</file>
+    </qresource>
+</RCC>

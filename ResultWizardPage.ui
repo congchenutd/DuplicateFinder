@@ -6,14 +6,14 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>589</width>
+    <width>774</width>
     <height>434</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>WizardPage</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout">
+  <layout class="QGridLayout" name="gridLayout">
    <property name="leftMargin">
     <number>0</number>
    </property>
@@ -26,7 +26,7 @@
    <property name="bottomMargin">
     <number>0</number>
    </property>
-   <item>
+   <item row="0" column="0" colspan="10">
     <widget class="QSplitter" name="splitter">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
@@ -37,8 +37,66 @@
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
      </property>
-     <widget class="QTreeView" name="tvDuplicates"/>
+     <widget class="QTreeView" name="tvDuplicates">
+      <property name="editTriggers">
+       <set>QAbstractItemView::NoEditTriggers</set>
+      </property>
+     </widget>
      <widget class="PreviewWidget" name="previewWidget" native="true"/>
+    </widget>
+   </item>
+   <item row="1" column="2">
+    <widget class="QRadioButton" name="radioDeleteNew">
+     <property name="text">
+      <string>Delete new</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="7">
+    <widget class="QRadioButton" name="radioDeleteFolder">
+     <property name="text">
+      <string>Delete folder</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="4">
+    <widget class="QRadioButton" name="radioKeepPattern">
+     <property name="text">
+      <string>Keep pattern</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="9">
+    <spacer name="horizontalSpacer">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>40</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="1" column="1">
+    <widget class="QRadioButton" name="radioDeleteOld">
+     <property name="text">
+      <string>Delete old</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="8">
+    <widget class="QComboBox" name="comboFolders"/>
+   </item>
+   <item row="1" column="6">
+    <widget class="QLineEdit" name="lePattern"/>
+   </item>
+   <item row="1" column="3">
+    <widget class="QRadioButton" name="radioDeletePattern">
+     <property name="text">
+      <string>Delete pattern</string>
+     </property>
     </widget>
    </item>
   </layout>
